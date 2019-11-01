@@ -1,7 +1,7 @@
 /*
 * Demonstrating function pointers in C.
 * Author: Benned Hedegaard
-* Date: 10/2/2019
+* Date: 11/1/2019
 */
 #import <stdio.h>
 #include <stdlib.h> // For atoi function.
@@ -15,14 +15,12 @@ int main(int argc, char *argv[])
 {
 	if (argc < 3) // Safety check. Require two numbers to add.
 	{
-		printf("Invalid input. Please input two integers as arguments.\n");
+		printf("Invalid input. Please input two integer arguments.\n");
 		return 0;
 	}
 
-	char* in1 = argv[1];
-	char* in2 = argv[2];
-	int int1 = atoi(in1);
-	int int2 = atoi(in2);
+	int int1 = atoi(argv[1]);
+	int int2 = atoi(argv[2]);
 
 	int (*v)(int a, int b);
 

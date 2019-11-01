@@ -1,7 +1,7 @@
 /*
 * Demonstrating memory layout in structs.
 * Author: Benned Hedegaard
-* Date: 10/2/2019
+* Date: 11/1/2019
 */
 #import <stdio.h>
 
@@ -24,6 +24,7 @@ int main()
 	struct s3
 	{
 		char c;
+		char c2;
 		int i;
 		long l;
 	};
@@ -31,8 +32,9 @@ int main()
 	struct s4
 	{
 		int i;
-		long l;
 		char c;
+		long l;
+		char c2;
 	};
 
 	printf("char uses %lu bytes.\n", sizeof(char));
@@ -42,8 +44,8 @@ int main()
 	printf("Size of s1 (int int long): %lu\n", sizeof(struct s1)); // Why would these numbers differ?
 	printf("Size of s2 (int long int): %lu\n", sizeof(struct s2));
 
-	printf("Size of s3 (char int long): %lu\n", sizeof(struct s3)); // And these too?
-	printf("Size of s4 (int long char): %lu\n", sizeof(struct s4));
+	printf("Size of s3 (char char int long): %lu\n", sizeof(struct s3)); // And these too?
+	printf("Size of s4 (int char long char): %lu\n", sizeof(struct s4));
 
 	return 0;
 }
